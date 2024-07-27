@@ -15,12 +15,12 @@ intents.presences = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 
-def load_extensions(bot, directories):
+def load_extensions(discord_bot, directories):
     for directory in directories:
         for filename in os.listdir(directory):
             if filename.endswith('.py'):
                 extension = f"{directory}.{filename[:-3]}"
-                bot.load_extension(extension)
+                discord_bot.load_extension(extension)
                 print(f"[+] Loaded {extension.capitalize()}")
 
 
