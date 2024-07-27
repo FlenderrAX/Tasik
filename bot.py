@@ -9,6 +9,8 @@ BOT_TOKEN = os.getenv('DISCORDBOT_TOKEN')
 intents = discord.Intents.default()
 intents.messages = True
 intents.message_content = True
+intents.members = True
+intents.presences = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
